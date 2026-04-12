@@ -59,19 +59,26 @@
       ]
     },
     {
-      "groupName": "KONAMI",
+      "groupName": "BEMANI",
       "games": [
         {
           "id": "iidx-33",
           "title": "IIDX",
-          "tags": ["beatmania iidx", "bmiidx", "iidx", "konami"],
+          "tags": ["beatmania iidx", "bmiidx", "iidx", "sparkle shower", "benami"],
           "logo": "https://eacache.s.konaminet.jp/game/2dx/33/images/common/logo.png",
           "url": "https://p.eagate.573.jp/game/2dx/33/djdata/status.html"
         },
         {
+          "id": "sdvx-7",
+          "title": "SDVX",
+          "tags": ["sound voltex", "sdvx", "nabla", "benami"],
+          "logo": "https://eacache.s.konaminet.jp/game/sdvx/vii/images/common/logo.png",
+          "url": "https://p.eagate.573.jp/game/sdvx/vii/playdata/profile/index.html"
+        },
+        {
           "id": "sdvx-6",
           "title": "SDVX",
-          "tags": ["sound voltex", "sdvx", "konami"],
+          "tags": ["sound voltex", "sdvx", "exceed gear", "eg", "benami"],
           "logo": "https://eacache.s.konaminet.jp/game/sdvx/vi/images/menu/logo.png",
           "url": "https://p.eagate.573.jp/game/sdvx/vi/playdata/profile/index.html"
         }
