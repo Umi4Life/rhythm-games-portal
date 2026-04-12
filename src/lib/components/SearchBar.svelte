@@ -16,6 +16,6 @@
     placeholder="Search for a game..." 
     bind:value={searchQuery}
     autocomplete="off"
-    class="w-full"
+    class="w-full text-[16px]"
   />
 </div>

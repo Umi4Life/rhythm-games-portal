@@ -10,14 +10,28 @@
   import { onMount } from 'svelte';
   import { loadFavorites, saveFavorites, toggleFavorite } from './lib/utils/favorites';
   import { filterGames } from './lib/utils/search';
+  import { generateParticles, type Particle } from './lib/utils/particles';
 
   interface Config {
     authorName: string;
     githubLink: string;
   }
 
-  let config = $state<Config | null>(null);
   const { groups: initialGroups } = sitesData;
+
+  let config = $state<Config | null>(null);
+  let searchQuery = $state("");
+  let showFavoritesOnly = $state(false);
+  let favorites = $state<string[]>([]);
+  let particles = $state<Particle[]>([]);
+  let isSearching = $derived(searchQuery.length > 0);
+  let filteredGames = $derived(
+    filterGames(initialGroups, searchQuery, favorites, showFavoritesOnly)
+  );
+
+  $effect(() => {
+    saveFavorites(favorites);
+  });
 
   onMount(() => {
     try {
@@ -26,47 +40,17 @@
       console.error('Failed to parse config.yaml', e);
     }
   });
-  
-  let searchQuery = $state("");
-  let showFavoritesOnly = $state(false);
-  let favorites = $state<string[]>([]);
-
-  // Load favorites from localStorage on mount
   onMount(() => {
     favorites = loadFavorites();
   });
 
-  // Save favorites to localStorage whenever they change
-  $effect(() => {
-    saveFavorites(favorites);
+  onMount(() => {
+    particles = generateParticles(30);
   });
 
   function onToggleFavorite(id: string) {
     favorites = toggleFavorite(favorites, id);
   }
-
-  // Filtered data logic
-  const filteredGames = $derived(
-    filterGames(initialGroups, searchQuery, favorites, showFavoritesOnly)
-  );
-
-  const isSearching = $derived(searchQuery.length > 0);
-
-  // Particle generation logic
-  const particles = $state<{ id: number; left: string; delay: string; duration: string; size: string }[]>([]);
-
-  onMount(() => {
-    const particleCount = 30;
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        delay: `${Math.random() * 5}s`,
-        duration: `${5 + Math.random() * 5}s`,
-        size: `${2 + Math.random() * 4}px`
-      });
-    }
-  });
 </script>
 
 <main class="min-h-screen animated-gradient-bg relative overflow-hidden">
