@@ -22,7 +22,7 @@
   let config = $state<Config | null>(null);
   let searchQuery = $state("");
   let showFavoritesOnly = $state(false);
-  let favorites = $state<string[]>([]);
+  let favorites = $state<string[]>(loadFavorites());
   let particles = $state<Particle[]>([]);
   let isSearching = $derived(searchQuery.length > 0);
   let filteredGames = $derived(
@@ -39,9 +39,6 @@
     } catch (e) {
       console.error('Failed to parse config.yaml', e);
     }
-  });
-  onMount(() => {
-    favorites = loadFavorites();
   });
 
   onMount(() => {
