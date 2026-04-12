@@ -1,0 +1,93 @@
+{
+  "groups": [
+    {
+      "groupName": "SEGA (jp)",
+      "games": [
+        {
+          "id": "maimai-dx-jp",
+          "title": "maimai DX",
+          "region": "jp",
+          "tags": ["maimai dx", "sega", "jp"],
+          "logo": "https://maimaidx.jp/maimai-mobile/img/logo.png",
+          "url": "https://maimaidx.jp/maimai-mobile/home"
+        },
+        {
+          "id": "chunithm-jp",
+          "title": "CHUNITHM",
+          "region": "jp",
+          "tags": ["chunithm", "sega", "jp"],
+          "logo": "https://new.chunithm-net.com/chuni-mobile/html/mobile/images/logo.png",
+          "url": "https://new.chunithm-net.com/chuni-mobile/html/mobile/"
+        },
+        {
+          "id": "ongeki-jp",
+          "title": "オンゲキ",
+          "region": "jp",
+          "tags": ["オンゲキ", "ongeki", "sega", "jp"],
+          "logo": "https://ongeki-net.com/ongeki-mobile/img/logo.png",
+          "url": "https://ongeki-net.com/ongeki-mobile/"
+        }
+      ]
+    },
+        {
+      "groupName": "SEGA (intl)",
+      "games": [
+        {
+          "id": "maimai-dx-intl",
+          "title": "maimai DX",
+          "region": "intl",
+          "tags": ["maimai dx", "sega", "intl"],
+          "logo": "https://maimaidx-eng.com/maimai-mobile/img/logo.png",
+          "url": "https://maimaidx-eng.com/maimai-mobile/home"
+        },
+        {
+          "id": "chunithm-intl",
+          "title": "CHUNITHM",
+          "region": "intl",
+          "tags": ["chunithm", "sega", "intl"],
+          "logo": "https://chunithm-net-eng.com/mobile/images/logo.png",
+          "url": "https://chunithm-net-eng.com/mobile/home/"
+        },
+        {
+          "id": "ongeki-intl",
+          "title": "オンゲキ",
+          "region": "intl",
+          "tags": ["オンゲキ", "ongeki", "sega", "intl"],
+          "logo": "https://ongeki-net.com/ongeki-mobile/img/logo.png",
+          "url": "https://store.steampowered.com/app/4496350/DJMAX_RESPECT_V___ONGEKI_PACK/"
+        }
+      ]
+    },
+    {
+      "groupName": "KONAMI",
+      "games": [
+        {
+          "id": "iidx-33",
+          "title": "IIDX",
+          "tags": ["beatmania iidx", "bmiidx", "iidx", "konami"],
+          "logo": "https://eacache.s.konaminet.jp/game/2dx/33/images/common/logo.png",
+          "url": "https://p.eagate.573.jp/game/2dx/33/djdata/status.html"
+        },
+        {
+          "id": "sdvx-6",
+          "title": "SDVX",
+          "tags": ["sound voltex", "sdvx", "konami"],
+          "logo": "https://eacache.s.konaminet.jp/game/sdvx/vi/images/menu/logo.png",
+          "url": "https://p.eagate.573.jp/game/sdvx/vi/playdata/profile/index.html"
+        }
+      ]
+    },
+    {
+      "groupName": "NAMCO",
+      "games": [
+        {
+          "id": "taiko",
+          "title": "太鼓の達人",
+          "tags": ["太鼓の達人", "taik no tatsujin", "taiko", "namco"],
+          "logo": "https://taiko.namco-ch.net/taiko/en/images/common/logo_nijiiro.png",
+          "url": "https://donderhiroba.jp/login.php"
+        }
+      ]
+    }
+  ]
+}
