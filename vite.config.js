@@ -5,5 +5,10 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 // https://vite.dev/config/
 export default defineConfig({ 
   base: './',
-  plugins: [tailwindcss(), svelte()] 
+  plugins: [tailwindcss(), svelte()],
+  build: {
+  rollupOptions: {
+    input: 'index.html'
+  }
+}
 });
