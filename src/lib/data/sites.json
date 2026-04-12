@@ -1,7 +1,7 @@
 {
   "groups": [
     {
-      "groupName": "SEGA (jp)",
+      "groupName": "SEGA",
       "games": [
         {
           "id": "maimai-dx-jp",
@@ -26,12 +26,7 @@
           "tags": ["オンゲキ", "ongeki", "sega", "jp"],
           "logo": "https://ongeki-net.com/ongeki-mobile/img/logo.png",
           "url": "https://ongeki-net.com/ongeki-mobile/"
-        }
-      ]
-    },
-        {
-      "groupName": "SEGA (intl)",
-      "games": [
+        },
         {
           "id": "maimai-dx-intl",
           "title": "maimai DX",
