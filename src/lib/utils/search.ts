@@ -1,7 +1,7 @@
-import type { Game } from '../types';
+import type { Game, Group } from '../types';
 
 export function filterGames(
-  initialGroups: Array<{ groupName: string; games: Game[] }>,
+  initialGroups: Group[],
   searchQuery: string,
   favorites: string[],
   showFavoritesOnly: boolean
