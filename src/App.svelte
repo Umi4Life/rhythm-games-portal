@@ -10,12 +10,8 @@
   import { onMount } from 'svelte';
   import { loadFavorites, saveFavorites, toggleFavorite } from './lib/utils/favorites';
   import { filterGames } from './lib/utils/search';
-  import { generateParticles, type Particle } from './lib/utils/particles';
-
-  interface Config {
-    authorName: string;
-    githubLink: string;
-  }
+  import { generateParticles } from './lib/utils/particles';
+  import type { Config, Particle } from './lib/types';
 
   const { groups: initialGroups } = sitesData;
 

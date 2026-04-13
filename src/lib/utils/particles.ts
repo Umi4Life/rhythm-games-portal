@@ -1,10 +1,4 @@
-export interface Particle {
-  id: number;
-  left: string;
-  delay: string;
-  duration: string;
-  size: string;
-}
+import type { Particle } from '../types';
 
 export function generateParticles(count: number): Particle[] {
   const particles: Particle[] = [];

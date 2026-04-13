@@ -1,13 +1,6 @@
 <script lang="ts">
   import GameCard from "./GameCard.svelte";
-
-  interface Game {
-    id: string;
-    title: string;
-    logo: string;
-    url: string;
-    groupName?: string;
-  }
+  import type { Game } from '../types';
 
   let { 
     games, 
@@ -16,7 +9,7 @@
   }: { 
     games: Game[], 
     favorites: string[], 
-    onToggleFavorite: (title: string) => void 
+    onToggleFavorite: (id: string) => void 
   } = $props();
 </script>
 

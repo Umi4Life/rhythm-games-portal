@@ -2,24 +2,7 @@
   import { Accordion, AccordionItem } from "flowbite-svelte";
   import GameGrid from "./GameGrid.svelte";
   import GameCard from "./GameCard.svelte";
-
-  interface Group {
-    groupName: string;
-    games: Array<{
-      id: string;
-      title: string;
-      logo: string;
-      url: string;
-    }>;
-  }
-
-  interface Game {
-    id: string;
-    title: string;
-    logo: string;
-    url: string;
-    groupName?: string;
-  }
+  import type { Group, Game } from '../types';
 
   let { 
     isSearching, 
@@ -35,7 +18,7 @@
     initialGroups: Group[],
     searchQuery: string,
     favorites: string[],
-    onToggleFavorite: (title: string) => void,
+    onToggleFavorite: (id: string) => void,
     showFavoritesOnly: boolean
   } = $props();
 </script>

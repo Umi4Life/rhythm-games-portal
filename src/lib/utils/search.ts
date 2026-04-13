@@ -1,18 +1,11 @@
-export interface SearchableGame {
-  id: string;
-  title: string;
-  logo: string;
-  url: string;
-  groupName?: string;
-  tags?: string[];
-}
+import type { Game } from '../types';
 
 export function filterGames(
-  initialGroups: Array<{ groupName: string; games: SearchableGame[] }>,
+  initialGroups: Array<{ groupName: string; games: Game[] }>,
   searchQuery: string,
   favorites: string[],
   showFavoritesOnly: boolean
-): SearchableGame[] {
+): Game[] {
   const query = searchQuery.toLowerCase();
   
   return initialGroups

@@ -6,6 +6,9 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 export default defineConfig({ 
   base: './',
   plugins: [tailwindcss(), svelte()],
+  test: {
+    environment: 'jsdom',
+  },
   build: {
   rollupOptions: {
     input: 'index.html'

@@ -1,14 +1,6 @@
 <script lang="ts">
   import Heart from "@lucide/svelte/icons/heart";
-
-  interface Game {
-    id: string;
-    title: string;
-    logo: string;
-    url: string;
-    tags?: string[];
-    region?: string;
-  }
+  import type { Game } from '../types';
 
   let { 
     game, 
@@ -38,6 +30,7 @@
         <img 
           src={game.logo} 
           alt={game.title} 
+          loading="lazy"
           class="max-w-[95%] max-h-[90%] object-contain mb-2"
         />
       </div>
