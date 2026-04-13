@@ -1,17 +1,19 @@
 <script lang="ts">
-  import sitesData from "./lib/data/sites.json";
-  import SearchBar from "./lib/components/SearchBar.svelte";
-  import GamePortalContent from "./lib/components/GamePortalContent.svelte";
-  import { Button, Footer, FooterCopyright, FooterIcon } from "flowbite-svelte";
-  import Heart from "@lucide/svelte/icons/heart";
-  import { GithubSolid } from "flowbite-svelte-icons";
-  import yaml from 'js-yaml';
-  import configYaml from './lib/data/config.yaml?raw';
   import { onMount } from 'svelte';
-  import { loadFavorites, saveFavorites, toggleFavorite } from './lib/utils/favorites';
+  import { Button, Footer, FooterCopyright, FooterIcon } from 'flowbite-svelte';
+  import { GithubSolid } from 'flowbite-svelte-icons';
+  import Heart from '@lucide/svelte/icons/heart';
+  import yaml from 'js-yaml';
+
+  import GamePortalContent from './lib/components/GamePortalContent.svelte';
+  import SearchBar from './lib/components/SearchBar.svelte';
   import { filterGames } from './lib/utils/search';
   import { generateParticles } from './lib/utils/particles';
+  import { loadFavorites, saveFavorites, toggleFavorite } from './lib/utils/favorites';
   import type { Config, Particle } from './lib/types';
+
+  import configYaml from './lib/data/config.yaml?raw';
+  import sitesData from './lib/data/sites.json';
 
   const { groups: initialGroups } = sitesData;
 

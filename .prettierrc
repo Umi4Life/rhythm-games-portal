@@ -7,7 +7,7 @@
   "trailingComma": "es5",
   "bracketSpacing": true,
   "arrowParens": "always",
-  "plugins": ["prettier-plugin-svelte"],
+  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-svelte"],
   "overrides": [
     {
       "files": "*.svelte",
