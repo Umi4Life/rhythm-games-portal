@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { loadFavorites, saveFavorites, toggleFavorite } from './favorites';
+import { loadFavorites, saveFavorites, toggleFavorite, loadShowFavoritesOnly, saveShowFavoritesOnly } from './favorites';
 
 describe('favorites utils', () => {
   beforeEach(() => {
@@ -39,13 +39,32 @@ describe('favorites utils', () => {
     expect(localStorage.getItem('otoge-favorites')).toBe(JSON.stringify(favorites));
   });
 
-  it('should toggle favorite correctly', () => {
-    const favorites = ['1'];
-    // Add new
-    const added = toggleFavorite(favorites, '2');
-    expect(added).toEqual(['1', '2']);
-    // Remove existing
-    const removed = toggleFavorite(added, '1');
-    expect(removed).toEqual(['2']);
-  });
-});
+   it('should toggle favorite correctly', () => {
+     const favorites = ['1'];
+     // Add new
+     const added = toggleFavorite(favorites, '2');
+     expect(added).toEqual(['1', '2']);
+     // Remove existing
+     const removed = toggleFavorite(added, '1');
+     expect(removed).toEqual(['2']);
+   });
+
+   it('should load show favorites only state from localStorage', () => {
+     localStorage.setItem('otoge-show-favorites-only', 'true');
+     expect(loadShowFavoritesOnly()).toBe(true);
+     localStorage.setItem('otoge-show-favorites-only', 'false');
+     expect(loadShowFavoritesOnly()).toBe(false);
+   });
+
+   it('should save show favorites only state to localStorage', () => {
+     saveShowFavoritesOnly(true);
+     expect(localStorage.getItem('otoge-show-favorites-only')).toBe('true');
+     saveShowFavoritesOnly(false);
+     expect(localStorage.getItem('otoge-show-favorites-only')).toBe('false');
+   });
+
+   it('should return false if nothing is in localStorage for show favorites only', () => {
+     // Note: beforeEach clears localStorage, so it should be empty here
+     expect(loadShowFavoritesOnly()).toBe(false);
+   });
+ });

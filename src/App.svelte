@@ -9,7 +9,7 @@
   import SearchBar from './lib/components/SearchBar.svelte';
   import { filterGames } from './lib/utils/search';
   import { generateParticles } from './lib/utils/particles';
-  import { loadFavorites, saveFavorites, toggleFavorite } from './lib/utils/favorites';
+  import { loadFavorites, saveFavorites, toggleFavorite, loadShowFavoritesOnly, saveShowFavoritesOnly } from './lib/utils/favorites';
   import type { Config, Particle } from './lib/types';
 
   import configYaml from './lib/data/config.yaml?raw';
@@ -19,7 +19,7 @@
 
   let config = $state<Config | null>(null);
   let searchQuery = $state("");
-  let showFavoritesOnly = $state(false);
+  let showFavoritesOnly = $state(loadShowFavoritesOnly());
   let favorites = $state<string[]>(loadFavorites());
   let particles = $state<Particle[]>([]);
   let isSearching = $derived(searchQuery.length > 0);
@@ -29,6 +29,10 @@
 
   $effect(() => {
     saveFavorites(favorites);
+  });
+
+  $effect(() => {
+    saveShowFavoritesOnly(showFavoritesOnly);
   });
 
   onMount(() => {

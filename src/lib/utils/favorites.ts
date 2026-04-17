@@ -1,5 +1,8 @@
+const SHOW_FAVORITES_ONLY_KEY = "otoge-show-favorites-only";
+const FAVORITES_KEY = "otoge-favorites";
+
 export function loadFavorites(): string[] {
-  const stored = localStorage.getItem("otoge-favorites");
+  const stored = localStorage.getItem(FAVORITES_KEY);
   if (stored) {
     try {
       return JSON.parse(stored);
@@ -12,7 +15,7 @@ export function loadFavorites(): string[] {
 }
 
 export function saveFavorites(favorites: string[]): void {
-  localStorage.setItem("otoge-favorites", JSON.stringify(favorites));
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
 }
 
 export function toggleFavorite(favorites: string[], id: string): string[] {
@@ -21,4 +24,12 @@ export function toggleFavorite(favorites: string[], id: string): string[] {
   } else {
     return [...favorites, id];
   }
+}
+
+export function saveShowFavoritesOnly(value: boolean): void {
+  localStorage.setItem(SHOW_FAVORITES_ONLY_KEY, String(value));
+}
+
+export function loadShowFavoritesOnly(): boolean {
+  return localStorage.getItem(SHOW_FAVORITES_ONLY_KEY) === "true";
 }
